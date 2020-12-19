@@ -6,7 +6,7 @@ app.get('/api/soru/:soru', function (req, res) {
    
    fs.readFile( __dirname + "/api/" + "sorular.json", 'utf8', function (err, data) {
       var cevap = JSON.parse( data );
-      var user = users["soru" + req.params.soru + "Cevap:" +cevap] 
+      var soru = cevap["soru" + req.params.soru + "Cevap:" +cevap] 
       console.log("Started api");
       res.end( JSON.stringify(user));
    });
